@@ -33,3 +33,25 @@ https://medium.com/%D0%B0%D1%82%D0%BE%D0%BC%D0%B0%D1%80%D0%BD%D1%8B%D0%B9-%D0%B4
 Понедельник, 8 апреля, 12:00 KGD
 
 # Процесс выполнения
+
+### 0. Start
+Loader - atom 1-2 hours  
+css recipe  
+props  
+story  
+? color  
+
+RequestStatus - molecule 1-2 hours  
+story  
+
+SelectField - molecule 1-2 hours  
+
+TextareaField - molecule 1-2 hours  
+
+CheckboxWithText - molecule ?organism 1-2 hours  
+
+DeliveryTime - orgahism 2-4 hours  
+
+страница 2 - page 4-6 hours  
+
+страница 3 - page 4-6 hours  
