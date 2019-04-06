@@ -11,7 +11,7 @@ const Container = styled(Flex1)`
 
 const TextareaContainer = styled(FieldContainer)`
   height: 101px;
-  padding: ${theme.paddings.main}px;
+  padding: ${({ theme }) => theme.paddings.main}px;
   flex-direction: column;
 `
 
@@ -24,7 +24,7 @@ const StyledTextarea = styled.textarea`
   font-family: Montserrat;
   font-size: 16px;
   outline: none;
-  color: ${({ disabled }) =>
+  color: ${({ disabled, theme }) =>
     disabled ? theme.pallete.lightGray : theme.pallete.nero};
   ::placeholder {
     color: ${({ theme }) => theme.pallete.lightGray};

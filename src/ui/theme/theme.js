@@ -2,6 +2,8 @@ export const theme = {
   pallete: {
     radicalRed: '#FF3F6E',
     nero: '#000000',
+    gainsboro: '#D3D3D3',
+    whiteSmoke: '#E9E9E9',
     gray2: '#222222',
     silver: '#BDBDBD',
     lightGray: '#A7A7A7',

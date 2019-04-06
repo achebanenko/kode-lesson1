@@ -1,17 +1,17 @@
-import { styled, theme } from '@ui/theme'
+import { styled } from '@ui/theme'
 
 export const FieldContainer = styled.div`
   box-sizing: border-box;
-  /* padding-left: ${theme.paddings.main}px; */
+  /* padding-left: ${({theme}) => theme.paddings.main}px; */
   display: flex;
   flex-direction: row;
   border-radius: 4px;
-  background-color: ${theme.pallete.darkWhite};
+  background-color: ${({ theme }) => theme.pallete.darkWhite};
   height: 40px;
   min-height: 40px;
   border: 
     1px
-    ${({ error, focused }) =>
+    ${({ error, theme, focused }) =>
       error
         ? theme.pallete.errorColor
         : focused

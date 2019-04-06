@@ -12,5 +12,8 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: normal;
     color: ${props => props.theme.pallete.gray2};
   }
-
+  a {
+    color: ${props => props.theme.pallete.radicalRed};
+    text-decoration: none;
+  }
 `

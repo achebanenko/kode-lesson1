@@ -18,7 +18,7 @@ const StyledSelection = styled.div`
   font-family: Montserrat;
   font-size: 16px;
   outline: none;
-  color: ${({ disabled }) =>
+  color: ${({ theme, disabled }) =>
     disabled ? theme.pallete.lightGray : theme.pallete.nero};
 
   display: flex;

@@ -7,7 +7,7 @@ storiesOf('ui/molecules', module)
   .add('RequestStatus', () => (
   	<RequestStatus 
   	  children={text('children','Телефон отправляется')}
-  	  danger={boolean('danger', false)}
+  	  error={boolean('error', false)}
   	  success={boolean('success', false)}
   	/>
   ))

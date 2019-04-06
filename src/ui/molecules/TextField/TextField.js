@@ -11,26 +11,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `
-/*
-const FieldContainer = styled.div`
-  box-sizing: border-box;
-  padding-left: ${({ theme }) => theme.paddings.main};
-  display: flex;
-  flex-direction: row;
-  border-radius: 4px;
-  background-color: ${({ theme }) => theme.pallete.darkWhite};
-  height: 40px;
-  min-height: 40px;
-  border: 1px
-    ${({ error, theme, focused }) =>
-      error
-        ? theme.pallete.errorColor
-        : focused
-        ? theme.pallete.lola
-        : theme.pallete.darkWhite}
-    solid;
-`
-*/
 
 const StyledInput = styled.input`
   border: none;
@@ -41,7 +21,7 @@ const StyledInput = styled.input`
   font-family: Montserrat;
   font-size: 16px;
   outline: none;
-  color: ${({ theme, disabled }) =>
+  color: ${({ disabled, theme }) =>
     disabled ? theme.pallete.lightGray : theme.pallete.nero};
   ::placeholder {
     color: ${({ theme }) => theme.pallete.lightGray};

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Flex1 } from '@ui/atoms'
 import { Body2 } from '@ui/atoms/Typography'
-import { styled, theme } from '@ui/theme'
+import { styled } from '@ui/theme'
 
 const Container = styled(Flex1)`
 	align-items: center;
@@ -11,18 +11,18 @@ const Container = styled(Flex1)`
 
 const ContextualColor = styled(Body2)`
   color: 
-    ${(props) => (
-      !props.success && !props.danger
+    ${({success, error, theme}) => (
+      !success && !error
         ? theme.pallete.lightGray
-        : (props.danger && theme.pallete.errorColor)
-          || (props.success && theme.pallete.successColor)
+        : (error && theme.pallete.errorColor)
+          || (success && theme.pallete.successColor)
     )};
 `
 
-export const RequestStatus = ({ children, success, danger }) => {
+export const RequestStatus = ({ children, success, error }) => {
   return (
     <Container>
-      <ContextualColor success={success} danger={danger}>
+      <ContextualColor success={success} error={error}>
         {children}
       </ContextualColor>
     </Container>
@@ -32,5 +32,5 @@ export const RequestStatus = ({ children, success, danger }) => {
 RequestStatus.propTypes = {
   children: PropTypes.string,
   success: PropTypes.bool,
-  danger: PropTypes.bool
+  error: PropTypes.bool
 }
