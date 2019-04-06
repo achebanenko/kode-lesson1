@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react' 
 import PropTypes from 'prop-types'
 
-import { HBox, VBox, IconLoader, IconSuccess } from '@ui/atoms'
+import { FieldContainer, HBox, VBox, IconLoader, IconSuccess } from '@ui/atoms'
 import { InputError, InputTip } from '@ui/atoms/Typography'
 import { FormLabel, FormAdornment } from '@ui/molecules'
 import { styled, theme } from '@ui/theme'
@@ -11,7 +11,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `
-
+/*
 const FieldContainer = styled.div`
   box-sizing: border-box;
   padding-left: ${({ theme }) => theme.paddings.main};
@@ -30,6 +30,7 @@ const FieldContainer = styled.div`
         : theme.pallete.darkWhite}
     solid;
 `
+*/
 
 const StyledInput = styled.input`
   border: none;
