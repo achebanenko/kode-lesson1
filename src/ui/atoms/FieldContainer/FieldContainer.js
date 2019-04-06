@@ -2,7 +2,7 @@ import { styled, theme } from '@ui/theme'
 
 export const FieldContainer = styled.div`
   box-sizing: border-box;
-  padding-left: ${theme.paddings.main};
+  /* padding-left: ${theme.paddings.main}px; */
   display: flex;
   flex-direction: row;
   border-radius: 4px;
