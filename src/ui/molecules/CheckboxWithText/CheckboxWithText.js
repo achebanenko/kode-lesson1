@@ -14,6 +14,19 @@ const CheckboxContainer = styled.div`
 	cursor: pointer;
 `
 
+const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
+  border: 0;
+  clip: rect(0 0 0 0);
+  clippath: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+`
+
 const TextContainer = styled(Body2)`
 
 `
@@ -22,6 +35,7 @@ export const CheckboxWithText = ({ text, checked, disabled }) => {
 	return (
 		<Container>
 			<CheckboxContainer>
+				<HiddenCheckbox checked={checked} />
 				<Checkbox checked={checked} disabled={disabled} />
 			</CheckboxContainer>
 			<VBox/>

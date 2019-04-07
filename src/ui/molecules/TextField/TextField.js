@@ -15,6 +15,7 @@ const Container = styled.div`
 const StyledInput = styled.input`
   border: none;
   background-color: transparent;
+  width: 100%;
   height: 40px;
   flex: 1;
   line-height: 18px;

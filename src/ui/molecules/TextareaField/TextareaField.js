@@ -52,7 +52,7 @@ export const TextareaField = ({ label, value, placeholder, disabled, onFocus, on
     	<HBox half />
     	<TextareaContainer focused={focused}>
         <StyledTextarea 
-    			//value={value}
+    			value={value}
           placeholder={placeholder}
           disabled={disabled} 
           onFocus={handleFocus}

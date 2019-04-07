@@ -22,9 +22,9 @@ export const Verify = ({ story }) => {
 					{story 
 						? story
 						: (<>
-							<TextField/>
-							<RequestStatus/>
-						</>)
+								<TextField/>
+								<RequestStatus/>
+							</>)
 					}
 				</Wrapper>
 			</Flex1>

@@ -5,15 +5,9 @@ import { AnimationLoader } from '@ui/atoms'
 import { ButtonText } from '@ui/atoms/Typography'
 
 const Button = styled('div')`
-  background: ${({ loading, theme }) =>
-    loading ? theme.pallete.nero : theme.pallete.white};
-  border: 2px solid
-    ${({ disabled, theme, loading }) =>
-      loading
-        ? theme.pallete.nero
-        : disabled
-        ? theme.pallete.silver
-        : theme.pallete.radicalRed};
+  background: ${({ disabled, theme }) =>
+    disabled ? "rgba(0, 0, 0, .15)" : theme.pallete.radicalRed};
+  
   padding: 0 12px;
   display: flex;
   align-items: center;
@@ -22,7 +16,7 @@ const Button = styled('div')`
   border-radius: 4px;
 `
 
-export const ButtonAccent = ({ loading, disabled, children, onPress }) => (
+export const ButtonColor = ({ loading, disabled, children, onPress }) => (
   <Button
     disabled={disabled}
     loading={loading}
@@ -32,13 +26,13 @@ export const ButtonAccent = ({ loading, disabled, children, onPress }) => (
       ? <AnimationLoader fill={theme.pallete.white} />
       : <ButtonText 
           children={children}
-          color={disabled ? theme.pallete.lightGray : theme.pallete.nero}
+          color={disabled ? theme.pallete.grey : theme.pallete.white}
         />
     }
   </Button>
 )
 
-ButtonAccent.propTypes = {
+ButtonColor.propTypes = {
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.string,

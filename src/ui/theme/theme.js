@@ -6,6 +6,7 @@ export const theme = {
     whiteSmoke: '#E9E9E9',
     gray2: '#222222',
     silver: '#BDBDBD',
+    grey: "#7A7A7A",
     lightGray: '#A7A7A7',
     white: '#ffffff',
     darkWhite: '#F4F4F4',

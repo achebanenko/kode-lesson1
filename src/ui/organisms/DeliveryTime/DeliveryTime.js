@@ -12,14 +12,9 @@ const Container = styled(Flex1)`
 
 const InnerContainer = styled.div`
 	display: flex;
-	align-items: center;
-
 	> * {
 		height: 40px;
-		display: inline-block;
-		border: 1px solid red;
 	}
-
 `
 
 const Dash = styled(Body1)`
@@ -27,7 +22,7 @@ const Dash = styled(Body1)`
 	align-items: center;
 `
 
-export const DeliveryTime = ({ label, disabled }) => {
+export const DeliveryTime = ({ label, from, to, disabled }) => {
 	return (
 		<Container>
 			<FormLabel children={label} />
@@ -37,6 +32,7 @@ export const DeliveryTime = ({ label, disabled }) => {
 				<TextField notStandalone
 					disabled={disabled} 
 					startAdornment="с"
+					value={from}
 				/>
 				
 				<VBox half />
@@ -46,6 +42,7 @@ export const DeliveryTime = ({ label, disabled }) => {
 				<TextField notStandalone 
 					disabled={disabled} 
 					startAdornment="до"
+					value={to}
 				/>
 			</InnerContainer>
 		</Container>
