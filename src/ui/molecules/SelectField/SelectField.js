@@ -28,16 +28,21 @@ const StyledSelection = styled.div`
   /* text-overflow: ellipsis; */
 `;
 
-export const SelectField = ({ label, value, disabled }) => {
+export const SelectField = ({ label, value, disabled, onClick }) => {
+
+  const handleClick = e => {
+    if (onClick) onClick(e)
+  }
+
 	return (
     <Container>
     	<FormLabel children={label} />
     	<HBox height={theme.paddings.half} />
-    	<FieldContainer>
+    	<FieldContainer onClick={handleClick}>
     		<VBox />
     		<StyledSelection 
     			children={value}
-    			disabled={disabled} 
+    			disabled={disabled}
     		/>
     		<FormAdornment children={<IconArrowDown/>} />
     	</FieldContainer>
@@ -51,6 +56,5 @@ SelectField.propTypes = {
 	disabled: PropTypes.bool,
 
 	// onChange: PropTypes.func.isRequired,
-	// onBlur: PropTypes.func,
-  // onFocus: PropTypes.func,
+	onClick: PropTypes.func,
 }

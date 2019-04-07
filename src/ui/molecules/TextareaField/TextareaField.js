@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 import { Flex1, FieldContainer, HBox } from '@ui/atoms'
@@ -11,7 +11,6 @@ const Container = styled(Flex1)`
 
 const TextareaContainer = styled(FieldContainer)`
   height: 101px;
-  padding: ${({ theme }) => theme.paddings.main}px;
   flex-direction: column;
 `
 
@@ -19,6 +18,7 @@ const StyledTextarea = styled.textarea`
 	border: none;
   background-color: transparent;
   height: 101px;
+  padding: ${({ theme }) => theme.paddings.main}px;
   flex: 1;
   line-height: 18px;
   font-family: Montserrat;
@@ -33,16 +33,30 @@ const StyledTextarea = styled.textarea`
   resize: none;
 `;
 
-export const TextareaField = ({ label, value, placeholder, disabled }) => {
+export const TextareaField = ({ label, value, placeholder, disabled, onFocus, onBlur }) => {
+  
+  const [focused, setFocused] = useState(false)
+
+  const handleFocus = e => {
+    if (onFocus) onFocus(e)
+    setFocused(true)
+  }
+  const handleBlur = e => {
+    if (onBlur) onBlur(e)
+    setFocused(false)
+  }
+
 	return (
     <Container>
     	<FormLabel children={label} />
     	<HBox height={theme.paddings.half} />
-    	<TextareaContainer>
+    	<TextareaContainer focused={focused}>
         <StyledTextarea 
-    			children={value}
+    			//value={value}
           placeholder={placeholder}
           disabled={disabled} 
+          onFocus={handleFocus}
+          onBlur={handleBlur}
     		/>
     	</TextareaContainer>
     </Container>
@@ -56,6 +70,6 @@ TextareaField.propTypes = {
 	disabled: PropTypes.bool,
 
 	// onChange: PropTypes.func.isRequired,
-	// onBlur: PropTypes.func,
-  // onFocus: PropTypes.func,
+	onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
 }

@@ -1,7 +1,11 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Loader } from './Loader';
+import { Loader } from './Loader'
+import { boolean } from '@storybook/addon-knobs'
 
 storiesOf('ui/molecules', module)
-  .add('Loader', () => <Loader/>)
-
+  .add('Loader', () => (
+  	<Loader
+  		sync={boolean('sync', true)}
+  	/>
+  ))
