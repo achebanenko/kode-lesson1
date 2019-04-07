@@ -29,8 +29,8 @@ storiesOf('ui/molecules', module).add(
       disabled={boolean('disabled', false)}
       placeholder={text('placeholder', '9XXXXXXXXX')}
       label={text('label', 'Номер телефона')}
-      error={select(
-        'error',
+      errorMessage={select(
+        'errorMessage',
         {
           invalid: 'Поле заполнено неверно',
           none: null,

@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react' 
 import PropTypes from 'prop-types'
 
-import { FieldContainer, HBox, VBox, IconLoader, IconSuccess } from '@ui/atoms'
+import { FieldContainer, HBox, VBox, IconSuccess, AnimationLoader } from '@ui/atoms'
 import { InputError, InputTip } from '@ui/atoms/Typography'
 import { FormLabel, FormAdornment } from '@ui/molecules'
 import { styled } from '@ui/theme'
@@ -35,7 +35,7 @@ export const TextField = ({
   disabled,
   placeholder,
   label,
-  error,
+  errorMessage,
   value,
   tip,
   valid,
@@ -64,7 +64,7 @@ export const TextField = ({
         <HBox half />
       </Fragment>)}
 
-      <FieldContainer focused={focused} error={error}>
+      <FieldContainer focused={focused} errorMessage={errorMessage}>
         {startAdornment 
           ? <FormAdornment children={startAdornment} /> 
           : <VBox />
@@ -78,15 +78,15 @@ export const TextField = ({
           onBlur={handleBlur}
         />
         <FormAdornment>
-          {status === 'loading' ? <IconLoader /> : null}
+          {status === 'loading' ? <AnimationLoader /> : null}
           {status === 'success' ? <IconSuccess /> : null}
         </FormAdornment>
       </FieldContainer>
 
       {!notStandalone && (<Fragment>
         <HBox half />
-        {error 
-          ? <InputError children={error} /> 
+        {errorMessage 
+          ? <InputError children={errorMessage} /> 
           : <InputTip children={tip} />
         }
       </Fragment>)}
@@ -99,7 +99,7 @@ TextField.propTypes = {
   disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   label: PropTypes.string,
-  error: PropTypes.string,
+  errorMessage: PropTypes.string,
   value: PropTypes.string.isRequired,
   tip: PropTypes.string,
   valid: PropTypes.bool,

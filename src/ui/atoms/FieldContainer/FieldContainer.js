@@ -11,8 +11,8 @@ export const FieldContainer = styled.div`
   min-height: 40px;
   border: 
     1px
-    ${({ error, theme, focused }) =>
-      error
+    ${({ error, errorMessage, theme, focused }) =>
+      error || errorMessage
         ? theme.pallete.errorColor
         : focused
         ? theme.pallete.lola
