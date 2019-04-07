@@ -26,7 +26,7 @@
     "build": "craco build",
     "eject": "craco eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -c .storybook"
+    "build-storybook": "build-storybook -c .storybook -o docs"
   },
   "eslintConfig": {
     "extends": "react-app"
