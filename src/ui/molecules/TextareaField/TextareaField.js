@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Flex1, FieldContainer, HBox } from '@ui/atoms'
 import { FormLabel } from '@ui/molecules'
-import { styled, theme } from '@ui/theme'
+import { styled } from '@ui/theme'
 
 const Container = styled(Flex1)`
 	height: 125px;
@@ -49,7 +49,7 @@ export const TextareaField = ({ label, value, placeholder, disabled, onFocus, on
 	return (
     <Container>
     	<FormLabel children={label} />
-    	<HBox height={theme.paddings.half} />
+    	<HBox half />
     	<TextareaContainer focused={focused}>
         <StyledTextarea 
     			//value={value}

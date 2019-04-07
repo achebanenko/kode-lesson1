@@ -1,10 +1,10 @@
-import React, { useState } from 'react' 
+import React, { Fragment, useState } from 'react' 
 import PropTypes from 'prop-types'
 
 import { FieldContainer, HBox, VBox, IconLoader, IconSuccess } from '@ui/atoms'
 import { InputError, InputTip } from '@ui/atoms/Typography'
 import { FormLabel, FormAdornment } from '@ui/molecules'
-import { styled, theme } from '@ui/theme'
+import { styled } from '@ui/theme'
 
 const Container = styled.div`
   height: 88px;
@@ -42,6 +42,7 @@ export const TextField = ({
   onChange,
   onBlur,
   onFocus,
+  notStandalone
 }) => {
   const [focused, setFocused] = useState(false)
   const handleFocus = e => {
@@ -58,14 +59,16 @@ export const TextField = ({
   }
   return (
     <Container>
-      <FormLabel valid={valid}>{label}</FormLabel>
-      <HBox height={theme.paddings.half} />
+      {!notStandalone && (<Fragment>
+        <FormLabel children={label} valid={valid} />
+        <HBox half />
+      </Fragment>)}
+
       <FieldContainer focused={focused} error={error}>
-        {startAdornment ? (
-          <FormAdornment>{startAdornment}</FormAdornment>
-        ) : (
-          <VBox />
-        )}
+        {startAdornment 
+          ? <FormAdornment children={startAdornment} /> 
+          : <VBox />
+        }
         <StyledInput
           placeholder={placeholder ? placeholder : ''}
           disabled={disabled}
@@ -79,8 +82,14 @@ export const TextField = ({
           {status === 'success' ? <IconSuccess /> : null}
         </FormAdornment>
       </FieldContainer>
-      <HBox height={theme.paddings.half} />
-      {error ? <InputError>{error}</InputError> : <InputTip>{tip}</InputTip>}
+
+      {!notStandalone && (<Fragment>
+        <HBox half />
+        {error 
+          ? <InputError children={error} /> 
+          : <InputTip children={tip} />
+        }
+      </Fragment>)}
     </Container>
   )
 }
@@ -99,4 +108,6 @@ TextField.propTypes = {
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
+
+  notStandalone: PropTypes.bool,
 }

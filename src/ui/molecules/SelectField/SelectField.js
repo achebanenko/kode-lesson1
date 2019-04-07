@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Flex1, FieldContainer, HBox, VBox, IconArrowDown } from '@ui/atoms'
 import { FormLabel, FormAdornment } from '@ui/molecules'
-import { styled, theme } from '@ui/theme'
+import { styled } from '@ui/theme'
 
 const Container = styled(Flex1)`
 	height: 88px;
@@ -37,7 +37,7 @@ export const SelectField = ({ label, value, disabled, onClick }) => {
 	return (
     <Container>
     	<FormLabel children={label} />
-    	<HBox height={theme.paddings.half} />
+    	<HBox half />
     	<FieldContainer onClick={handleClick}>
     		<VBox />
     		<StyledSelection 
