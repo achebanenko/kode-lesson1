@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { styled } from '@ui/theme'
-import { IconValid } from '@ui/atoms'
+import { IconValid, VBox } from '@ui/atoms'
 import { InputLabel } from '@ui/atoms/Typography'
 
 const Container = styled.div`
@@ -16,6 +16,7 @@ export const FormLabel = ({ children, valid }) => {
   return (
     <Container>
       <InputLabel>{children ? children : ' '}</InputLabel>
+      <VBox half />
       {valid ? <IconValid /> : null}
     </Container>
   )
