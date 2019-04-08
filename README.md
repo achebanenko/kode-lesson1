@@ -96,6 +96,7 @@ providing different chunks for story adds
 
 ### 8. Page 3
 
+ButtonColor from design  
 simulating props for story adds  
 
 ### 9. Deploy
