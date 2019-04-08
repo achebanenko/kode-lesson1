@@ -34,24 +34,21 @@ https://medium.com/%D0%B0%D1%82%D0%BE%D0%BC%D0%B0%D1%80%D0%BD%D1%8B%D0%B9-%D0%B4
 
 # Процесс выполнения
 
+Continious deploy https://unruffled-hermann-7f306a.netlify.com  
+Static deploy https://artchebanenko.github.io/lesson-1/
+
 ### 0. Start
-Loader - atom 1-2 hours  
-css recipe  
-props  
-story  
-? color  
 
-RequestStatus - molecule 1-2 hours  
-story  
-
-SelectField - molecule 1-2 hours  
-
-TextareaField - molecule 1-2 hours  
-
-CheckboxWithText - molecule ?organism 1-2 hours  
-
-DeliveryTime - orgahism 2-4 hours  
-
-страница 2 - page 4-6 hours  
-
-страница 3 - page 4-6 hours  
+|Task|Est|Fact|
+|-|-|-|
+|Setup|1 hour|1 hour|
+|Loader|1-2 hours|1+1 hours (svg recipe)|
+|RequestStatus|1-2 hours|1 hour|
+|SelectField|1-2 hours|2 hours|
+|TextareaField|1-2 hours|1 hour|
+|CheckboxWithText|1-2 hours|2 hours|
+|DeliveryTime organism|2-4 hours|2+1 hours (inner flexbox)|
+|страница 2|2-3 hours|1 hour|
+|страница 3|2-3 hours|2+1 hours (extra button)|
+|deploy|2 hours|1+1 hours (study)|
+|addon-info|2 hours|1+1 hours (study)|
