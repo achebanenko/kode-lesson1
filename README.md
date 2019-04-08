@@ -103,9 +103,9 @@ simulating props for story adds
 
 Continious via app.netlify  
 Static via github docs  
-!ISSUE: not updating Prop Types section in story Show Info (?cash latency)  
+!ISSUE: not updating Prop Types section in story Show Info (?~~cash~~ cache latency)  
 
 ### 10. withInfo
 
 config.js, addParameters, info, inline  
-ISSUE: markdown  
+* [ ] ISSUE: markdown  
