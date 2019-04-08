@@ -16,7 +16,7 @@ const Button = styled('div')`
   border-radius: 4px;
 `
 
-export const ButtonColor = ({ loading, disabled, children, onPress }) => (
+export const ButtonColor = ({ label, loading, disabled, onPress }) => (
   <Button
     disabled={disabled}
     loading={loading}
@@ -25,7 +25,7 @@ export const ButtonColor = ({ loading, disabled, children, onPress }) => (
     {loading 
       ? <AnimationLoader fill={theme.pallete.white} />
       : <ButtonText 
-          children={children}
+          children={label}
           color={disabled ? theme.pallete.grey : theme.pallete.white}
         />
     }
@@ -33,8 +33,8 @@ export const ButtonColor = ({ loading, disabled, children, onPress }) => (
 )
 
 ButtonColor.propTypes = {
+  label: PropTypes.string,
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
-  children: PropTypes.string,
   onPress: PropTypes.func.isRequired,
 }

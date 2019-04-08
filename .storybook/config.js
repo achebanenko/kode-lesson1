@@ -1,6 +1,7 @@
 import React from 'react'
 import { addDecorator, configure } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
+import { withInfo } from '@storybook/addon-info'
 import { Normalize } from 'styled-normalize'
 
 import { theme, GlobalStyles, styled, ThemeProvider } from '@ui/theme'
@@ -22,6 +23,7 @@ const InnerContainer = styled.div`
 `
 
 function loadStories() {
+  addDecorator(withInfo({ header: false }))
   addDecorator(withKnobs())
   addDecorator(story => (
     <StoryBookContainer>

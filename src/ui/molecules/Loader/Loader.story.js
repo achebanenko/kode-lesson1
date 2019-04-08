@@ -8,4 +8,6 @@ storiesOf('ui/molecules', module)
   	<Loader
   		sync={boolean('sync', true)}
   	/>
-  ))
+  ), {
+  	info: { inline: true, text: 'Анимация при загрузке данных'}
+  })

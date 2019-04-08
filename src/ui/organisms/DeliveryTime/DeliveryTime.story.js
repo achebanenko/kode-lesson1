@@ -9,4 +9,13 @@ storiesOf('ui/organisms', module)
 			label={text('label', 'Время доставки')}
 			disabled={boolean('disabled', false)}
 		/>
-	))
+	), {
+		info: {
+			text: `
+				## Время доставки
+				### Описание
+				DeliveryTime состоит из двух TextField  
+				Которые будут полагаться на значение друг друга  
+			`,
+		}
+	})

@@ -51,5 +51,7 @@ export const DeliveryTime = ({ label, from, to, disabled }) => {
 
 DeliveryTime.propTypes = {
 	label: PropTypes.string,
+	from: PropTypes.string,
+	to: PropTypes.string,
 	disabled: PropTypes.bool,
 }

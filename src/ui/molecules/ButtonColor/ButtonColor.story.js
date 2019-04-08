@@ -6,10 +6,11 @@ import { action } from '@storybook/addon-actions'
 
 storiesOf('ui/molecules', module).add('ButtonColor', () => (
   <ButtonColor
+  	label="Отправить"
     disabled={boolean('disabled', false)}
     loading={boolean('loading', false)}
     onPress={action('press')}
-  >
-    Button
-  </ButtonColor>
-))
+  />
+), {
+	info: { inline: true, text: 'Цветная кнопка + label вместо children'}
+})

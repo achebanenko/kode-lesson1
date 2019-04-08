@@ -54,8 +54,10 @@ export const Transfer = ({ terms, ...storyProps }) => {
 
 					<Wrapper>
 						{storyProps.buttonDisabled
-							? <ButtonColor disabled={storyProps.buttonDisabled} children="Отправить" />
-							: <ButtonAccent loading={storyProps.buttonLoading} children="Отправить" />
+							? <ButtonColor label="Отправить" disabled={storyProps.buttonDisabled} />
+							: (<ButtonAccent loading={storyProps.buttonLoading}>
+									Отправить
+								</ButtonAccent>)
 						}
 		      </Wrapper>
 		    </Fieldset>

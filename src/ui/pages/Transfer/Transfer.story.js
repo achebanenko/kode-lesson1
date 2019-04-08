@@ -32,6 +32,20 @@ const propsTransfering = {
 
 
 storiesOf('ui/pages', module)
-	.add('Transfer/3.1 Countries', () => <Transfer {...propsCountries} />)
-	.add('Transfer/3.4 Fullfilled', () => <Transfer {...propsCountries} {...propsFullfilled} />)
-	.add('Transfer/3.5 Transfering', () => <Transfer {...propsCountries} {...propsFullfilled} {...propsTransfering} />)
+	.add('Transfer/3.1 Countries', () => (
+		<Transfer {...propsCountries} />
+	), {
+		info: { text: 'Незаполненные поля' }
+	})
+
+	.add('Transfer/3.4 Fullfilled', () => (
+		<Transfer {...propsCountries} {...propsFullfilled} />
+	), {
+		info: { text: 'Заполнен комментарий и остальное' }
+	})
+
+	.add('Transfer/3.5 Transfering', () => (
+		<Transfer {...propsCountries} {...propsFullfilled} {...propsTransfering} />
+	), {
+		info: { text: 'Отправка данных' }
+	})

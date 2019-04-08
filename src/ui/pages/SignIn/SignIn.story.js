@@ -10,28 +10,32 @@ const Wrapper = styled.div`
   padding: ${({ theme }) => theme.paddings.main}px;
 `
 
-storiesOf('ui/pages', module).add('SignIn', () => {
-  return (
-    <PageTemplate>
-      <Header title="Ввод номера телефона" />
-      <Divider />
-      <Flex1>
+storiesOf('ui/pages', module)
+  .addParameters({
+    info: { text: 'Ввод номера телефона' }
+  })
+  .add('SignIn', () => {
+    return (
+      <PageTemplate>
+        <Header title="Ввод номера телефона" />
+        <Divider />
+        <Flex1>
+          <Wrapper>
+            <HBox height={9} />
+            <Body2>На указанный телефон будет выслан код подтверждения</Body2>
+            <HBox height={20} />
+            <TextField
+              label="Номер телефона"
+              startAdornment="+7"
+              placeholder="9XXXXXXXXX"
+              onChange={action('onChange')}
+              value=""
+            />
+          </Wrapper>
+        </Flex1>
         <Wrapper>
-          <HBox height={9} />
-          <Body2>На указанный телефон будет выслан код подтверждения</Body2>
-          <HBox height={20} />
-          <TextField
-            label="Номер телефона"
-            startAdornment="+7"
-            placeholder="9XXXXXXXXX"
-            onChange={action('onChange')}
-            value=""
-          />
+          <ButtonAccent onPress={action('press')}>Отправить</ButtonAccent>
         </Wrapper>
-      </Flex1>
-      <Wrapper>
-        <ButtonAccent onPress={action('press')}>Отправить</ButtonAccent>
-      </Wrapper>
-    </PageTemplate>
-  )
-})
+      </PageTemplate>
+    )
+  })

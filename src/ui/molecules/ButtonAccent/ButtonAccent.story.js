@@ -12,4 +12,6 @@ storiesOf('ui/molecules', module).add('ButtonAccent', () => (
   >
     Button
   </ButtonAccent>
-))
+), {
+	info: { inline: true, text: 'Акцентированная кнопка'}
+})
