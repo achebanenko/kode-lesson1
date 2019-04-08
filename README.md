@@ -103,7 +103,7 @@ simulating props for story adds
 
 Continious via app.netlify  
 Static via github docs  
-!ISSUE: not updating Prop Types section in story Show Info
+!ISSUE: not updating Prop Types section in story Show Info (?cash latency)  
 
 ### 10. withInfo
 
