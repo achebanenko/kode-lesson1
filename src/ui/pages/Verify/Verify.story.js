@@ -7,23 +7,23 @@ import { TextField, RequestStatus } from '@ui/molecules'
 const ByDefault = () => (
 	<TextField label="Код" placeholder="1234" />
 )
+// ?How to deal with empty space (reserve or not)
 const Invalid = () => (
 	<div>
 		<TextField label="Код" value="12п5" errorMessage="Неверный код подтверждения" />
-		<RequestStatus children="&nbsp;"/>
+		<RequestStatus message="&nbsp;"/>
 	</div>
 )
-// ?How to deal with reserved empty space
 const Sending = () => (
 	<div>
 		<TextField label="Код" status="loading" value="3456" />
-		<RequestStatus children="Код отправляется" />
+		<RequestStatus message="Код отправляется" />
 	</div>
 )
 const Success = () => (
 	<div>
 		<TextField label="Код" status="success" value="3456" />
-		<RequestStatus success>Код успешно отправлен</RequestStatus>
+		<RequestStatus success message="Код успешно отправлен" />
 	</div>
 )
 

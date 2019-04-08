@@ -22,7 +22,7 @@ const Dash = styled(Body1)`
 	align-items: center;
 `
 
-export const DeliveryTime = ({ label, from, to, disabled }) => {
+export const DeliveryTime = ({ label, from, to, disabled, onChange }) => {
 	return (
 		<Container>
 			<FormLabel children={label} />
@@ -54,4 +54,6 @@ DeliveryTime.propTypes = {
 	from: PropTypes.string,
 	to: PropTypes.string,
 	disabled: PropTypes.bool,
+
+	onChange: PropTypes.func.isRequired,
 }

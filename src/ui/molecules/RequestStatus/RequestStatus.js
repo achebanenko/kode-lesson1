@@ -19,18 +19,18 @@ const ContextualColor = styled(Body2)`
     )};
 `
 
-export const RequestStatus = ({ children, success, error }) => {
+export const RequestStatus = ({ message, success, error }) => {
   return (
     <Container>
       <ContextualColor success={success} error={error}>
-        {children}
+        {message}
       </ContextualColor>
     </Container>
   )
 }
 
 RequestStatus.propTypes = {
-  children: PropTypes.string,
+  message: PropTypes.string.isRequired,
   success: PropTypes.bool,
   error: PropTypes.bool
 }

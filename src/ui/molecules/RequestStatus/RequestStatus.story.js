@@ -6,7 +6,7 @@ import { boolean, text } from '@storybook/addon-knobs'
 storiesOf('ui/molecules', module)
   .add('RequestStatus', () => (
   	<RequestStatus 
-  	  children={text('children','Телефон отправляется')}
+  	  message={text('message','Телефон отправляется')}
   	  error={boolean('error', false)}
   	  success={boolean('success', false)}
   	/>

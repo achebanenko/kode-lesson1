@@ -33,7 +33,7 @@ const StyledTextarea = styled.textarea`
   resize: none;
 `;
 
-export const TextareaField = ({ label, value, placeholder, disabled, onFocus, onBlur }) => {
+export const TextareaField = ({ label, value, placeholder, disabled, onChange, onFocus, onBlur }) => {
   
   const [focused, setFocused] = useState(false)
 
@@ -69,7 +69,7 @@ TextareaField.propTypes = {
   placeholder: PropTypes.string,
 	disabled: PropTypes.bool,
 
-	// onChange: PropTypes.func.isRequired,
+	onChange: PropTypes.func.isRequired,
 	onBlur: PropTypes.func,
   onFocus: PropTypes.func,
 }

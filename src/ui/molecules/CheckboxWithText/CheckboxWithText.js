@@ -31,10 +31,13 @@ const TextContainer = styled(Body2)`
 
 `
 
-export const CheckboxWithText = ({ text, checked, disabled }) => {
+export const CheckboxWithText = ({ text, checked, disabled, onClick }) => {
+	const handleClick = e => {
+    if (onClick) onClick(e)
+  }
 	return (
 		<Container>
-			<CheckboxContainer>
+			<CheckboxContainer onClick={handleClick}>
 				<HiddenCheckbox checked={checked} />
 				<Checkbox checked={checked} disabled={disabled} />
 			</CheckboxContainer>
@@ -49,4 +52,6 @@ CheckboxWithText.propTypes = {
 	text: PropTypes.node.isRequired,
 	checked: PropTypes.bool,
 	disabled: PropTypes.bool,
+
+	onClick: PropTypes.func.isRequired,
 }
